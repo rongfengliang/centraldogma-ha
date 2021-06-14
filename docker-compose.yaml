@@ -1,0 +1,23 @@
+version: "3"
+services: 
+    app:
+        image: line/centraldogma
+        volumes: 
+        - "./shiro.ini:/opt/centraldogma/conf/shiro.ini"
+        - "./dogma.json:/opt/centraldogma/conf/dogma.json"
+        ports: 
+        - "36462:36462"
+    app2:
+        image: line/centraldogma
+        volumes: 
+        - "./shiro.ini:/opt/centraldogma/conf/shiro.ini"
+        - "./dogma2.json:/opt/centraldogma/conf/dogma.json"
+        ports: 
+        - "36463:36462"
+    app3:
+        image: line/centraldogma
+        volumes: 
+        - "./shiro.ini:/opt/centraldogma/conf/shiro.ini"
+        - "./dogma3.json:/opt/centraldogma/conf/dogma.json"
+        ports: 
+        - "36464:36462"

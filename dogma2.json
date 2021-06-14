@@ -1,0 +1,79 @@
+{
+  "dataDir": "./data",
+  "ports": [
+    {
+      "localAddress": {
+        "host": "*",
+        "port": 36462
+      },
+      "protocols": [
+        "http"
+      ]
+    }
+  ],
+  "tls": null,
+  "trustedProxyAddresses": null,
+  "clientAddressSources": null,
+  "numWorkers": null,
+  "maxNumConnections": null,
+  "requestTimeoutMillis": null,
+  "idleTimeoutMillis": null,
+  "maxFrameLength": null,
+  "numRepositoryWorkers": 16,
+  "maxRemovedRepositoryAgeMillis": null,
+  "repositoryCacheSpec": "maximumWeight=134217728,expireAfterAccess=5m",
+  "gracefulShutdownTimeout": {
+    "quietPeriodMillis": 1000,
+    "timeoutMillis": 10000
+  },
+  "webAppEnabled": true,
+  "webAppTitle": null,
+  "mirroringEnabled": null,
+  "numMirroringThreads": null,
+  "maxNumFilesPerMirror": null,
+  "maxNumBytesPerMirror": null,
+  "replication" : {
+      "method": "ZOOKEEPER",
+      "serverId": 2,
+      "servers": {
+        "1": {
+          "host": "app",
+          "quorumPort": 36463,
+          "electionPort": 36464,
+          "groupId": null,
+          "weight": null
+        },
+        "2": {
+          "host": "app2",
+          "quorumPort": 36463,
+          "electionPort": 36464,
+          "groupId": null,
+          "weight": null
+        },
+        "3": {
+          "host": "app2",
+          "quorumPort": 36463,
+          "electionPort": 36464,
+          "groupId": null,
+          "weight": null
+        }
+      },
+      "secret": "JqJAkZ!oZ6MNx4rBpIH8M*yuVWXDULgR",
+      "additionalProperties": {},
+      "timeoutMillis": null,
+      "numWorkers": null,
+      "maxLogCount": null,
+      "minLogAgeMillis": null
+  },
+  "csrfTokenRequiredForThrift": null,
+  "accessLogFormat": "common",
+  "authentication": {
+      "factoryClassName": "com.linecorp.centraldogma.server.auth.shiro.ShiroAuthProviderFactory",
+      "administrators": ["admin"],
+      "caseSensitiveLoginNames": false,
+      "sessionCacheSpec": "maximumSize=8192,expireAfterWrite=604800s",
+      "sessionTimeoutMillis": 604800000,
+      "sessionValidationSchedule": "0 30 */4 ? * *",
+      "properties": "./conf/shiro.ini"
+    }
+}
